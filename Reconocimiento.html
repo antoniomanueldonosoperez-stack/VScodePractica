@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Descripción breve de la página" />
+  <title>Título de la página</title>
+
+  <!-- Enlace a hoja de estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Encabezado principal</h1>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sección principal</h2>
+
+      <!-- Elemento de vídeo: usaremos la webcam o un stream para realizar inferencias -->
+      <!--
+        Atributos importantes:
+        - autoplay + muted: permiten reproducción automática en muchos navegadores móviles.
+        - playsinline + webkit-playsinline: evitan que iOS ponga el vídeo a pantalla completa.
+        - aria-label: accesibilidad.
+      -->
+      <video id="video" width="640" height="480" autoplay muted playsinline webkit-playsinline aria-label="Vista de la cámara">
+        Tu navegador no soporta el elemento de vídeo.
+      </video>
+
+      <!-- Contenedor donde se imprimirán las predicciones/resultados -->
+      <div id="results" aria-live="polite">
+        <h3>Resultados</h3>
+        <ul id="predictions"></ul>
+      </div>
+    </section>
+
+    <aside>
+      <h3>Barra lateral</h3>
+      <p>Información complementaria</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tu nombre o empresa</p>
+  </footer>
+
+  <!-- Script de ejemplo -->
+  <!-- TensorFlow.js y MobileNet (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.2.2/dist/mobilenet.min.js"></script>
+
+  <!-- Script de ejemplo -->
+  <script src="script.js" defer></script>
+</body>
+</html>
